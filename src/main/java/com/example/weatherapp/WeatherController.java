@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 @Controller
 public class WeatherController {
 
-    private static final String API_KEY = "b1d27621d9762a119758216b387b396e"; 
+    private static final String API_KEY = "API_KEY"; 
 
     @GetMapping("/getWeather")
     public String getWeather(@RequestParam("city") String city, Model model) {
