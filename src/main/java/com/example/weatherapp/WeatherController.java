@@ -19,16 +19,15 @@ public class WeatherController {
         try {
             WeatherResponse weatherData = restTemplate.getForObject(apiUrl, WeatherResponse.class);
             
-            // Debug: print response to console
             System.out.println("Weather API Response: " + weatherData);
             
-            model.addAttribute("weatherData", weatherData); // Pass weather data to the view
-            model.addAttribute("city", city); // Pass the city name to the view
+            model.addAttribute("weatherData", weatherData); 
+            model.addAttribute("city", city); 
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
             model.addAttribute("error", "Could not retrieve weather data for " + city + ". Please check the city name and try again.");
         }
 
-        return "index"; // Return to the index.html page
+        return "index"; 
     }
 }
